@@ -15,7 +15,7 @@
   ],
   "require": {
     "php": "^7.0",
-    "ruflin/elastica": "^6.0",
+    "ruflin/elastica": "^7.1.1",
     "illuminate/database": ">=5.0",
     "illuminate/events": ">=5.0",
     "illuminate/http": ">=5.0",
