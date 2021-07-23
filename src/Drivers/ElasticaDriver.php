@@ -225,17 +225,6 @@ class ElasticaDriver implements Driver
      */
     protected function addDocumentsToIndex(string $index, array $documents)
     {
-        // Elasticsearch types are being deprecated so you can only have
-        // one type per index in elasticsearch 6, types will be removed
-        // completely in elasticsearch 7. However in elasticsearch 6 you
-        // cannot create a document without a type so here we are setting
-        // the type to be same as the index.
-        //
-        // See: https://www.elastic.co/guide/en/elasticsearch/reference/current/removal-of-types.html
-        foreach ($documents as $document) {
-            $document->setType($index);
-        }
-
         $index = $this->getIndex($this->getIndexName($index));
 
         $index->addDocuments($documents);
