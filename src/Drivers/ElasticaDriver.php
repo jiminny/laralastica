@@ -11,7 +11,7 @@ use Elastica\Query\BoolQuery;
 use Elastica\Query\Common;
 use Elastica\Query\Exists;
 use Elastica\Query\Fuzzy;
-use Elastica\Query\Match;
+use Elastica\Query\MatchQuery;
 use Elastica\Query\MatchAll;
 use Elastica\Query\MatchPhrase;
 use Elastica\Query\MatchPhrasePrefix;
@@ -335,7 +335,7 @@ class ElasticaDriver implements Driver
      */
     public function match(string $field = null, string $value = null, callable $callback = null)
     {
-        $query = new Match();
+        $query = new MatchQuery();
 
         $query->setFieldQuery($field, $value);
 
